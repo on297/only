@@ -5,11 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>请选择跳转通道</title>
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     html, body {
       margin: 0;
       padding: 0;
-      background: linear-gradient(to bottom right, #f0f8ff, #e6f7ff);
-      font-family: "Helvetica Neue", sans-serif;
+      font-family: "Helvetica Neue", "PingFang SC", sans-serif;
+      background: linear-gradient(135deg, #e0f7fa, #e0e7ff);
       color: #333;
       text-align: center;
     }
@@ -20,57 +24,96 @@
       justify-content: center;
       align-items: center;
       min-height: 100vh;
-      padding: 20px;
+      padding: 30px 20px;
     }
 
     .title {
-      font-size: 20px;
-      background-color: #ecf6ff;
-      color: #3498db;
-      padding: 16px 24px;
-      border-radius: 10px;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-      margin-bottom: 30px;
+      font-size: 24px;
+      background: linear-gradient(135deg, #3498db, #8e44ad);
+      color: #fff;
+      padding: 18px 30px;
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+      margin-bottom: 36px;
+      font-weight: bold;
+      letter-spacing: 1px;
     }
 
     .link-options {
       display: flex;
       flex-direction: column;
-      gap: 14px;
+      gap: 18px;
       width: 100%;
-      max-width: 400px;
+      max-width: 460px;
     }
 
     .link-options a {
-      font-size: 16px;
-      color: #3498db;
+      display: block;
+      font-size: 17px;
+      padding: 14px 24px;
+      border-radius: 10px;
+      background-color: #ffffff;
+      border-left: 6px solid #3498db;
       text-decoration: none;
-      border: 1px solid #3498db;
-      padding: 12px 20px;
-      border-radius: 8px;
-      background-color: #fff;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-      transition: all 0.3s ease;
+      color: #3498db;
+      text-align: left;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      transition: transform 0.2s, background-color 0.3s, color 0.3s;
     }
 
     .link-options a:hover {
       background-color: #3498db;
       color: #fff;
-      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+      transform: scale(1.03);
+      box-shadow: 0 4px 14px rgba(52, 152, 219, 0.3);
+    }
+
+    /* 为 F 和 G 设置绿色系按钮 */
+    .link-options a.fg {
+      border-left-color: #27ae60;
+      color: #27ae60;
+    }
+
+    .link-options a.fg:hover {
+      background-color: #27ae60;
+      color: #fff;
+      box-shadow: 0 4px 14px rgba(39, 174, 96, 0.3);
+    }
+
+    /* emoji 图标 */
+    .link-options a::before {
+      content: "🔗 ";
+      margin-right: 6px;
+    }
+
+    .link-options a.fg::before {
+      content: "✅ ";
+    }
+
+    @media (max-width: 480px) {
+      .title {
+        font-size: 20px;
+        padding: 14px 20px;
+      }
+
+      .link-options a {
+        font-size: 16px;
+        padding: 12px 20px;
+      }
     }
   </style>
 </head>
 <body>
   <main class="container">
-    <div class="title">请选择一个通道进入您要访问的页面：</div>
+    <div class="title">🔍 请选择一个通道进入您要访问的页面</div>
     <div class="link-options">
-      <a href="http://sns.pznrfsy.com/jiahui-cms-lab/prod/d22205b6689a47999b7aea8689a6f46a/fb6bf439264f4b18bda75ed88081e11e?bucket=afdeVL7YJlGD">A.精选合集，点击欣赏</a>
-      <a href="http://footresources.whwc128.com/wh_ojve?loginName=mma658">B.限时免费，立即进入</a>
-      <a href="http://img.cofool.com/49c08a5b?ic=wiwaoqhgnmGDeXEgfI&bucket=1">C.热门榜单，点击获取</a>
-      <a href="https://m.baidu.com/tzYTlfLLhqpFDOXHrJ/tc?bdver=2_1&bdenc=1&nsrc=g5Zsd3KFzZAyDK7NUNYfAfzrrOlQeZXlDLlrk9%2FRWaikgX3RTIimypu8wOWlKO3cDJdcHgu%2FAImF3GElKNDsXQ%3D%3D&?ic=wiwaoqhgzmgjlaiuki">D.限时直播，点我查看</a>
-      <a href="https://mp.weixin.qq.com/mp/readtemplate?t=pages/wapredirect&url=https://xzcsadwetfgfg.bd.bcebos.com/index.htm?bucket=RfZLVhkfwPDy">E.限时直播，点我查看</a>
-      <a href="http://image.sheshewang.net/wh_o3hk?loginName=mma658">F.备用通道，定期更新</a>
-      <a href="http://footresources.whwc128.com/wh_ojve?loginName=mma658">G.备用通道，定期更新</a>
+      <a href="http://sns.pznrfsy.com/jiahui-cms-lab/prod/d22205b6689a47999b7aea8689a6f46a/fb6bf439264f4b18bda75ed88081e11e?bucket=afdeVL7YJlGD">A. 精选合集，点击欣赏</a>
+      <a href="http://footresources.whwc128.com/wh_ojve?loginName=mma658">B. 限时免费，立即进入</a>
+      <a href="http://img.cofool.com/49c08a5b?ic=wiwaoqhgnmGDeXEgfI&bucket=1">C. 热门榜单，点击获取</a>
+      <a href="https://m.baidu.com/tzYTlfLLhqpFDOXHrJ/tc?bdver=2_1&bdenc=1&nsrc=g5Zsd3KFzZAyDK7NUNYfAfzrrOlQeZXlDLlrk9%2FRWaikgX3RTIimypu8wOWlKO3cDJdcHgu%2FAImF3GElKNDsXQ%3D%3D&?ic=wiwaoqhgzmgjlaiuki">D. 限时直播，点我查看</a>
+      <a href="https://mp.weixin.qq.com/mp/readtemplate?t=pages/wapredirect&url=https://xzcsadwetfgfg.bd.bcebos.com/index.htm?bucket=RfZLVhkfwPDy">E. 限时直播，点我查看</a>
+      <a class="fg" href="http://image.sheshewang.net/wh_o3hk?loginName=mma658">F. 备用通道，定期更新</a>
+      <a class="fg" href="http://footresources.whwc128.com/wh_ojve?loginName=mma658">G. 备用通道，定期更新</a>
     </div>
   </main>
 </body>
